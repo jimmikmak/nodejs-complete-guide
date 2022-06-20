@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const express = require("express");
 
 const authController = require("../controllers/auth");
@@ -15,5 +16,7 @@ router.post("/signup", authController.postSignup);
 router.post("/logout", authController.postLogout);
 
 router.get("/reset", authController.getReset);
+
+router.post("/reset", authController.postReset);
 
 module.exports = router;
