@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 const Product = require("../models/product");
 
 exports.getAddProduct = (req, res, next) => {
