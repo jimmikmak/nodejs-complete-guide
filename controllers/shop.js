@@ -58,8 +58,8 @@ exports.getIndex = (req, res, next) => {
     });
 };
 
-exports.getCart = async (req, res, next) => {
-  await req.user
+exports.getCart = (req, res, next) => {
+  req.user
     .populate("cart.items.productId")
     .then((user) => {
       console.log(user.cart.items);
@@ -176,7 +176,11 @@ exports.getInvoice = (req, res, next) => {
       pdfDoc.pipe(fs.createWriteStream(invoicePath));
       pdfDoc.pipe(res);
 
-      pdfDoc.text("Hello World!");
+      pdfDoc.fontSize(26).text("Invoice", {
+        underline: true,
+      });
+
+      pdfDoc.text("------------------------------");
 
       pdfDoc.end();
       // fs.readFile(invoicePath, (err, data) => {
