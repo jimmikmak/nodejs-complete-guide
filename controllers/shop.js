@@ -2,6 +2,9 @@
 /* eslint-disable no-undef */
 const fs = require("fs");
 const path = require("path");
+const stripe = require("stripe")(
+  "sk_test_51LPeP1LOJuUdzW3YeOtFPqBryZ5W0d53AhXlY646TlNtB879Ctxtvt58u9IUwrmkAByqdnzNNbQpN8U9JBREooS200CYC7eZGQ"
+);
 
 const PDFDocument = require("pdfkit");
 
